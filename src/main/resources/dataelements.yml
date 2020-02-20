@@ -1,0 +1,139 @@
+---
+id: 2
+description: Primary Account Number (PAN)
+value: 162727279000147221
+---
+id: 3
+description: Processing Code
+value : 430020
+---
+id: 4
+description: Transaction Amount
+value: 000020000000
+---
+id: 5
+description: Settlement Amount
+---
+id: 6
+description: Cardholder billing Amount
+---
+id: 7
+description: Transmission Date and Time
+value: 0907103000
+---
+id: 9
+description: Settlement Conversion Rate
+---
+id: 10
+description: Cardholder conversion rate
+---
+id: 11
+description: System Trace Audit Number
+value: 000001
+---
+id: 12
+description: Time, Local Transaction
+value: 102030
+---
+id: 13
+description: Date, Local Transaction
+value: 1012
+---
+id: 14
+description: Expiration Date
+---
+id: 15
+description: Date, Settlement
+value: 1012
+---
+id: 18
+description: Merchant Type
+---
+id: 19
+description: Acquiring Institution Country code
+---
+id: 22
+description: Point of Service Entry Mode Code
+value: 021
+---
+id: 25
+description: Point of Service Condition Code
+value: 00
+---
+id: 32
+description: Acquiring Institution Identification Code
+value: 071111111
+---
+id: 37
+description: Retrieval Reference Number
+value: 790710000001
+---
+id: 38
+description: Authorization Identification Response
+---
+id: 39
+description: Response Code
+---
+id: 41
+description: Card Acceptor Terminal Identification
+value: 12344321
+---
+id: 42
+description: Card Acceptor Identification Code
+---
+id: 43
+description: Card Acceptor Name and Location
+value: VIETBANK              12334567890123 704
+---
+id: 48
+description: Additional Data Private
+value: 018RATNA MATCHA|INDIA
+---
+id: 49
+description: Transaction Currency Code
+value: 704
+---
+id: 50
+description: Settlement Currency Code
+---
+id: 51
+description: Currency code, cardholder billing
+---
+id: 60
+description: User Defined Field
+value: 00201
+---
+id: 62
+description: Service Code
+value: 06IF_INQ
+---
+id: 63
+description: Transaction reference number
+value: 00512345
+---
+id: 70
+description: Network Management Response Code
+---
+id: 100
+description: Receiving Institution Identification Code
+value: 0599999
+---
+id: 102
+description: From Account Identification
+value: 161111222233334444
+---
+id: 103
+description: To Account Identification
+value: 12000000000087
+---
+id: 104
+description: Content transfers
+value: 019ContentTransferText
+---
+id: 120
+description: Information cardholder or account holder beneficiary
+value: 003kas
+---
+id: 128
+description: Message Authentication Code
+value: sA05luUyHCXDtS4=

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>ISO8583 message Generator</title>
+</head>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+<script>
+	$(document).ready(function() {
+		$.ajax({
+			url : "/spring-thymeleaf/js",
+		});
+	});
+</script>
+<body>
+    <form action="#" th:action="@{/create}" th:object="${form}" method="POST">
+        <fieldset>
+            <input type="submit" id="submitButton" th:value="Save">
+            <input type="reset" id="resetButton" name="reset" th:value="Reset"/>
+        </fieldset>
+        <table>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Data Element</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="elem, itemStat : *{dataElements}">
+                    <td th:text="${elem.id}" />
+                    <td th:text="${elem.description}" />
+                    <td>
+                        <input type="hidden" th:field="*{dataElements[__${itemStat.index}__].id}" />
+                        <input type="hidden" th:field="*{dataElements[__${itemStat.index}__].description}" />
+                        <input th:field="*{dataElements[__${itemStat.index}__].value}" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </form>
+</body>
