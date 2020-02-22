@@ -11,7 +11,7 @@ public class Iso8583MessageGenerator {
         Iso8583MessageBuilder iso8583MessageBuilder = new Iso8583MessageBuilder(iso8583MessageType);
         dataElementDto.getDataElements().forEach(e-> {
             if (e.getValue()!=null && !e.getValue().isEmpty()) {
-                iso8583MessageBuilder.appendElement(e.getId(), e.getValue());
+                iso8583MessageBuilder.putElement(e.getId(), e.getValue());
             }
         });
 
