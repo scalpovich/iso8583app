@@ -1,9 +1,9 @@
-package com.finastra.fpm.util.iso8583msggenerator.controller;
+package com.finastra.fpm.util.iso8583simulator.controller;
 
-import com.finastra.fpm.util.iso8583msggenerator.routes.CamelRouteBuilder;
-import com.finastra.fpm.util.iso8583msggenerator.message.DataElementDto;
-import com.finastra.fpm.util.iso8583msggenerator.message.Iso8583MessageGenerator;
-import com.finastra.fpm.util.iso8583msggenerator.provider.DefaultDataProvider;
+import com.finastra.fpm.util.iso8583simulator.routes.CamelRouteBuilder;
+import com.finastra.fpm.util.iso8583simulator.message.DataElementDto;
+import com.finastra.fpm.util.iso8583simulator.message.Iso8583MessageGenerator;
+import com.finastra.fpm.util.iso8583simulator.provider.DefaultDataProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

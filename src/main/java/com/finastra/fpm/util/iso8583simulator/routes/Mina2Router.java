@@ -1,7 +1,7 @@
-package com.finastra.fpm.util.iso8583msggenerator.routes;
+package com.finastra.fpm.util.iso8583simulator.routes;
 
-import com.finastra.fpm.util.iso8583msggenerator.message.DataElement;
-import com.finastra.fpm.util.iso8583msggenerator.provider.DefaultDataProvider;
+import com.finastra.fpm.util.iso8583simulator.message.DataElement;
+import com.finastra.fpm.util.iso8583simulator.provider.DefaultDataProvider;
 import org.apache.camel.builder.RouteBuilder;
 import org.jpos.iso.ISOMsg;
 import org.slf4j.Logger;
@@ -17,13 +17,13 @@ public class Mina2Router extends RouteBuilder {
 
     private static final Logger logger = LoggerFactory.getLogger(Mina2Router.class);
 
-    @Value("${my.socketserver.host:localhost}")
+    @Value("${simulator.socketserver.host:localhost}")
     private String host;
 
-    @Value("${my.socketserver.port:6001}")
+    @Value("${simulator.socketserver.port:6001}")
     private String port;
 
-    @Value("${my.socketserver.sync:true}")
+    @Value("${simulator.socketserver.sync:true}")
     private String sync;
 
     @Autowired

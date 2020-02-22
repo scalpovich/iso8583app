@@ -1,6 +1,6 @@
-package com.finastra.fpm.util.iso8583msggenerator.message;
+package com.finastra.fpm.util.iso8583simulator.message;
 
-import com.finastra.fpm.util.iso8583msggenerator.util.ConvertBinaryStringToHexString;
+import com.finastra.fpm.util.iso8583simulator.util.ConvertBinaryStringToHexString;
 import org.apache.commons.lang3.Validate;
 
 public class Iso8583MessageBuilder {

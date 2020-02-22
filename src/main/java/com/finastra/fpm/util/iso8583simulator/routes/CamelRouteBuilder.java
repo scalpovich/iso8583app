@@ -1,4 +1,4 @@
-package com.finastra.fpm.util.iso8583msggenerator.routes;
+package com.finastra.fpm.util.iso8583simulator.routes;
 
 import org.apache.camel.CamelContext;
 import org.apache.camel.ProducerTemplate;
@@ -21,9 +21,8 @@ public class CamelRouteBuilder implements InitializingBean, DisposableBean {
     @Value("${mpm.socketserver.sync:true}")
     private String sync;
 
-
-    @Value("${development.actAsMpm:false}")
-    private boolean actAsMpm;
+    @Value("${simulator.server.enabled:false}")
+    private boolean serverEnabled;
 
     @Autowired
     private DirectToSedaMpmMinaRouter directRouter;
@@ -43,7 +42,7 @@ public class CamelRouteBuilder implements InitializingBean, DisposableBean {
 
         camelContext.addRoutes(directRouter);
         camelContext.addRoutes(sedaToMinaRouter);
-        if (actAsMpm) {
+        if (serverEnabled) {
             camelContext.addRoutes(mina2Router);
         }
 

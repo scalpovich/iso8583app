@@ -1,4 +1,4 @@
-package com.finastra.fpm.util.iso8583msggenerator.util;
+package com.finastra.fpm.util.iso8583simulator.util;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.Validate;

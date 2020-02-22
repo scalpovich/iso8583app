@@ -1,4 +1,4 @@
-package com.finastra.fpm.util.iso8583msggenerator.message;
+package com.finastra.fpm.util.iso8583simulator.message;
 
 public enum ISO8583MessageType {
     DREQIN ("DREQIN", "0200"),

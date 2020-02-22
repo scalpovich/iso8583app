@@ -1,6 +1,6 @@
-package com.finastra.fpm.util.iso8583msggenerator.provider;
+package com.finastra.fpm.util.iso8583simulator.provider;
 
-import com.finastra.fpm.util.iso8583msggenerator.message.DataElementDto;
+import com.finastra.fpm.util.iso8583simulator.message.DataElementDto;
 import org.apache.commons.lang3.Validate;
 import org.springframework.stereotype.Component;
 

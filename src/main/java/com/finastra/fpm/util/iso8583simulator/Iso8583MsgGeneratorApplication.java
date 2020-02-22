@@ -1,4 +1,4 @@
-package com.finastra.fpm.util.iso8583msggenerator;
+package com.finastra.fpm.util.iso8583simulator;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

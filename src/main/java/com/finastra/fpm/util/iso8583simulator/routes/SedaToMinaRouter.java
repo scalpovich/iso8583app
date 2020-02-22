@@ -1,4 +1,4 @@
-package com.finastra.fpm.util.iso8583msggenerator.routes;
+package com.finastra.fpm.util.iso8583simulator.routes;
 
 import org.apache.camel.builder.RouteBuilder;
 import org.slf4j.Logger;
@@ -11,13 +11,13 @@ public class SedaToMinaRouter extends RouteBuilder {
 
     private static final Logger logger = LoggerFactory.getLogger(SedaToMinaRouter.class);
 
-    @Value("${mpm.socketserver.host:localhost}")
+    @Value("${fpm.socketserver.host:localhost}")
     private String host;
 
-    @Value("${mpm.socketserver.port:6000}")
+    @Value("${fpm.socketserver.port:6000}")
     private String port;
 
-    @Value("${mpm.socketserver.sync:true}")
+    @Value("${fpm.socketserver.sync:true}")
     private String sync;
 
 

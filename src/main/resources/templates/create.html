@@ -15,7 +15,7 @@
 <body>
     <form action="#" th:action="@{/create}" th:object="${form}" method="POST">
         <fieldset>
-            <input type="submit" id="submitButton" th:value="Save">
+            <input type="submit" id="submitButton" th:value="Send">
             <input type="reset" id="resetButton" name="reset" th:value="Reset"/>
         </fieldset>
         <table>
@@ -38,6 +38,5 @@
                 </tr>
             </tbody>
         </table>
-
     </form>
 </body>

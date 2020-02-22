@@ -1,4 +1,4 @@
-package com.finastra.fpm.util.iso8583msggenerator.message;
+package com.finastra.fpm.util.iso8583simulator.message;
 
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;

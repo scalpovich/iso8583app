@@ -1,4 +1,4 @@
-package com.finastra.fpm.util.iso8583msggenerator.routes;
+package com.finastra.fpm.util.iso8583simulator.routes;
 
 import org.apache.camel.builder.RouteBuilder;
 import org.slf4j.Logger;

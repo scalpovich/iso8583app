@@ -1,4 +1,4 @@
-package com.finastra.fpm.util.iso8583msggenerator.message;
+package com.finastra.fpm.util.iso8583simulator.message;
 
 import org.springframework.stereotype.Component;
 

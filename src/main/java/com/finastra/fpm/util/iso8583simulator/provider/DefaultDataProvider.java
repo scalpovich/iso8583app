@@ -1,7 +1,7 @@
-package com.finastra.fpm.util.iso8583msggenerator.provider;
+package com.finastra.fpm.util.iso8583simulator.provider;
 
 import com.esotericsoftware.yamlbeans.YamlReader;
-import com.finastra.fpm.util.iso8583msggenerator.message.DataElement;
+import com.finastra.fpm.util.iso8583simulator.message.DataElement;
 import org.apache.commons.lang3.Validate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
