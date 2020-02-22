@@ -1,10 +1,10 @@
-package com.finastra.fpm.util.iso8583msggenerator;
+package com.finastra.fpm.util.iso8583msggenerator.message;
 
 import java.util.List;
 
 public class DataElementDto {
     private List<DataElement> dataElements;
-    private String messageType =AppConstants.DREQIN;
+    private String messageType = ISO8583MessageType.DREQIN.getMessageType();
 
     public DataElementDto() {
 
@@ -25,7 +25,6 @@ public class DataElementDto {
     public void setDataElements(List<DataElement> dataElements) {
         this.dataElements = dataElements;
     }
-
 
     public String getMessageType() {
         return messageType;

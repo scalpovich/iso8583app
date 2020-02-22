@@ -1,8 +1,5 @@
-package com.finastra.fpm.util.iso8583msggenerator;
+package com.finastra.fpm.util.iso8583msggenerator.routes;
 
-import com.finastra.fpm.util.iso8583msggenerator.routes.DirectToSedaMpmMinaRouter;
-import com.finastra.fpm.util.iso8583msggenerator.routes.Mina2Router;
-import com.finastra.fpm.util.iso8583msggenerator.routes.SedaToMinaRouter;
 import org.apache.camel.CamelContext;
 import org.apache.camel.ProducerTemplate;
 import org.apache.camel.impl.DefaultCamelContext;

@@ -1,11 +1,15 @@
-package com.finastra.fpm.util.iso8583msggenerator;
+package com.finastra.fpm.util.iso8583msggenerator.message;
 
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.thymeleaf.util.Validate;
 
 import java.util.Map;
 
 public class DataElement {
+    private static final Logger logger = LoggerFactory.getLogger(DataElement.class);
+
     private int id;
     private String description;
     private String value;
@@ -18,21 +22,22 @@ public class DataElement {
     {
         Validate.notNull(map, "Map argument cannot be null.");
 
-        for (String key : map.keySet())
-        {
-            switch (key)
+        map.forEach((k,v) -> {
+            switch (k)
             {
                 case "id":
-                    this.id = Integer.parseInt(map.get(key));
+                    this.id = Integer.parseInt(v);
                     break;
                 case "description":
-                    this.description = map.get(key);
+                    this.description = v;
                     break;
                 case "value":
-                    this.value = map.get(key);
+                    this.value = v;
+                    break;
+                default:
+                    logger.error("Unknown map entry '{}'", k);
             }
-        }
-
+        });
     }
 
 

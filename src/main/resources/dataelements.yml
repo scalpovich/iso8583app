@@ -5,7 +5,7 @@ value: 162727279000147221
 ---
 id: 3
 description: Processing Code
-value : 430020
+value : 910020
 ---
 id: 4
 description: Transaction Amount
@@ -13,6 +13,7 @@ value: 000020000000
 ---
 id: 5
 description: Settlement Amount
+value: 000000042392
 ---
 id: 6
 description: Cardholder billing Amount
@@ -23,13 +24,14 @@ value: 0907103000
 ---
 id: 9
 description: Settlement Conversion Rate
+value: 71212345
 ---
 id: 10
 description: Cardholder conversion rate
 ---
 id: 11
 description: System Trace Audit Number
-value: 000001
+value: 000003
 ---
 id: 12
 description: Time, Local Transaction
@@ -66,7 +68,7 @@ value: 071111111
 ---
 id: 37
 description: Retrieval Reference Number
-value: 790710000001
+value: 790710000003
 ---
 id: 38
 description: Authorization Identification Response
@@ -95,6 +97,7 @@ value: 704
 ---
 id: 50
 description: Settlement Currency Code
+value: 704
 ---
 id: 51
 description: Currency code, cardholder billing
@@ -105,11 +108,11 @@ value: 00201
 ---
 id: 62
 description: Service Code
-value: 06IF_INQ
+value: 06IF_DEP
 ---
 id: 63
 description: Transaction reference number
-value: 00512345
+value: 00599345
 ---
 id: 70
 description: Network Management Response Code
@@ -120,11 +123,11 @@ value: 0599999
 ---
 id: 102
 description: From Account Identification
-value: 161111222233334444
+value: 123932I0000171
 ---
 id: 103
 description: To Account Identification
-value: 12000000000087
+value: 12100000000087
 ---
 id: 104
 description: Content transfers
@@ -132,7 +135,6 @@ value: 019ContentTransferText
 ---
 id: 120
 description: Information cardholder or account holder beneficiary
-value: 003kas
 ---
 id: 128
 description: Message Authentication Code

@@ -1,5 +1,11 @@
-package com.finastra.fpm.util.iso8583msggenerator;
+package com.finastra.fpm.util.iso8583msggenerator.controller;
 
+import com.finastra.fpm.util.iso8583msggenerator.routes.CamelRouteBuilder;
+import com.finastra.fpm.util.iso8583msggenerator.message.DataElementDto;
+import com.finastra.fpm.util.iso8583msggenerator.message.Iso8583MessageGenerator;
+import com.finastra.fpm.util.iso8583msggenerator.provider.DefaultDataProvider;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,8 +16,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class DefaultController {
 
-    @Autowired private IncomingDepositRequestProvider incomingDepositRequestProvider;
-    @Autowired private ISO8583MessageGenerator iso8583MessageGenerator;
+    private static final Logger logger = LoggerFactory.getLogger(DefaultController.class);
+
+    @Autowired private DefaultDataProvider incomingDepositRequestProvider;
+    @Autowired private Iso8583MessageGenerator iso8583MessageGenerator;
     @Autowired private CamelRouteBuilder sedaProducer;
 
     @GetMapping("/")
@@ -26,13 +34,12 @@ public class DefaultController {
     public String create (@ModelAttribute DataElementDto form, Model model) {
 
         String generatedMessage = iso8583MessageGenerator.generate(form, form.getMessageType());
-        System.out.println("generatedMessage='" + generatedMessage + "'");
-
+        logger.info("generatedMessage='{}'", generatedMessage);
 
         sedaProducer.sendMessage(generatedMessage);
 
         model.addAttribute("form", form);
-        form.getDataElements().forEach(System.out::println);
+        form.getDataElements().forEach(e->logger.info(e.toString()));
         return "redirect:/";
     }
 }

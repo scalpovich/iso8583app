@@ -1,13 +1,15 @@
 package com.finastra.fpm.util.iso8583msggenerator.routes;
 
-import org.apache.camel.Exchange;
-import org.apache.camel.Processor;
 import org.apache.camel.builder.RouteBuilder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
 public class SedaToMinaRouter extends RouteBuilder {
+
+    private static final Logger logger = LoggerFactory.getLogger(SedaToMinaRouter.class);
 
     @Value("${mpm.socketserver.host:localhost}")
     private String host;
@@ -20,20 +22,10 @@ public class SedaToMinaRouter extends RouteBuilder {
 
 
     @Override
-    public void configure() throws Exception {
+    public void configure() {
         from("seda:myqueue")
-                .process(new Processor() {
-                    @Override
-                    public void process(Exchange exchange) throws Exception {
-                        System.out.println("sending message to mina2:tcp://"+ host +":" + port + "?sync=" + sync);
-                    }
-                })
+                .process(exchange -> logger.info("sending message to mina2:tcp://{}:{}?sync={}", host, port, sync))
                 .to("mina2:tcp://"+ host +":" + port + "?sync=" + sync + "&clientMode=true")
-                .process(new Processor() {
-                    @Override
-                    public void process(Exchange exchange) throws Exception {
-                        System.out.println("Response is '" + exchange.getIn().getBody().toString() + "'");
-                    }
-                });
+                .process(exchange -> logger.info("Response is '{}'", exchange.getIn().getBody()));
     }
 }
