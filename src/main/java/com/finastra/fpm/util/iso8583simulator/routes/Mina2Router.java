@@ -1,16 +1,14 @@
 package com.finastra.fpm.util.iso8583simulator.routes;
 
-import com.finastra.fpm.util.iso8583simulator.message.DataElement;
-import com.finastra.fpm.util.iso8583simulator.provider.DefaultDataProvider;
+import com.finastra.fpm.util.iso8583simulator.service.ResponseProviderService;
 import org.apache.camel.builder.RouteBuilder;
+import org.apache.commons.lang3.StringUtils;
 import org.jpos.iso.ISOMsg;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
-
-import java.util.List;
 
 @Component
 public class Mina2Router extends RouteBuilder {
@@ -27,7 +25,7 @@ public class Mina2Router extends RouteBuilder {
     private String sync;
 
     @Autowired
-    private DefaultDataProvider incomingDepositRequestProvider;
+    private ResponseProviderService responseProviderService;
 
     @Override
     public void configure() {
@@ -36,9 +34,13 @@ public class Mina2Router extends RouteBuilder {
                     logger.info("Received message '{}'",exchange.getIn().getBody());
                     ISOMsg m = new ISOMsg();
                     m.unpack (exchange.getIn().getBody().toString().getBytes());
-                    List<DataElement> list = incomingDepositRequestProvider.getRequest();
-                    list.forEach(e->e.setValue(m.getString(e.getId())));
-                    exchange.getMessage().setBody("OK");
+
+                    String response = responseProviderService.generateResponse(m);
+                    if (StringUtils.isNotEmpty(response)) {
+                        exchange.getMessage().setBody(response);
+                    } else {
+                        exchange.getMessage().setBody(StringUtils.EMPTY);
+                    }
                 });
     }
 }

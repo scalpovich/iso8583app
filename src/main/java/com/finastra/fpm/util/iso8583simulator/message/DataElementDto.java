@@ -4,7 +4,7 @@ import java.util.List;
 
 public class DataElementDto {
     private List<DataElement> dataElements;
-    private String messageType = ISO8583MessageType.DREQIN.getMessageType();
+    private String messageType = ISO8583MessageType.DREQ.getMessageType();
 
     public DataElementDto() {
 

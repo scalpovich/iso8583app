@@ -1,4 +1,4 @@
-package com.finastra.fpm.util.iso8583simulator.provider;
+package com.finastra.fpm.util.iso8583simulator.service;
 
 import com.esotericsoftware.yamlbeans.YamlReader;
 import com.finastra.fpm.util.iso8583simulator.message.DataElement;

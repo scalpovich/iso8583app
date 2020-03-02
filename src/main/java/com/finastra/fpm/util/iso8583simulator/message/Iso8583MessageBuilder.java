@@ -3,11 +3,19 @@ package com.finastra.fpm.util.iso8583simulator.message;
 import com.finastra.fpm.util.iso8583simulator.util.ConvertBinaryStringToHexString;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.Validate;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 
+@Component
+@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class Iso8583MessageBuilder {
-    private static int BITMAP_MAX_SIZE = 128;
+
+    @Value("${max.field.id:64}")
+    private int BITMAP_MAX_SIZE;
 
     private ISO8583MessageType iso8583MessageType;
     private String[] fieldList;
@@ -36,8 +44,10 @@ public class Iso8583MessageBuilder {
         StringBuilder sb = new StringBuilder();
         char[] bitmap = getNewBitMap();
 
-        //set bit for MTI
-        bitmap[0] = '1';
+        if (BITMAP_MAX_SIZE>64) {
+            //set bit for secondary bitmap
+            bitmap[0] = '1';
+        }
 
         for(int i=1; i<BITMAP_MAX_SIZE;i++) {
             bitmap[i] = StringUtils.isEmpty(fieldList[i]) ? '0' : '1';
