@@ -1,5 +1,7 @@
 package com.finastra.fpm.util.iso8583simulator.message;
 
+import com.finastra.fpm.util.iso8583simulator.model.DataElement;
+
 import java.util.List;
 
 public class DataElementDto {
