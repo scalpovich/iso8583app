@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 
 import java.util.List;
@@ -26,11 +27,12 @@ public class DefaultController {
     @Autowired private CamelRouteBuilder sedaProducer;
 
     @GetMapping("/")
-    public String main(Model model) {
+    public ModelAndView main(){
         DataElementDto dataElementDto = new DataElementDto();
         dataElementDto.setDataElements(incomingDepositRequestProvider.getRequest());
-        model.addAttribute("form", dataElementDto);
-        return "create";
+        ModelAndView modelAndView = new ModelAndView("create");
+        modelAndView.addObject("form", dataElementDto);
+        return modelAndView;
     }
 
     @GetMapping("/iso8583")
