@@ -1,141 +1,152 @@
 ---
 id: 2
 description: Primary Account Number (PAN)
-value: 162727279000147221
+value: primaryaccountnumber
 ---
 id: 3
 description: Processing Code
-value : 910020
+value : processingcode
 ---
 id: 4
 description: Transaction Amount
-value: 000020000000
+value: txamount
 ---
 id: 5
 description: Settlement Amount
-value: 000000042392
+value: settlementamount
 ---
 id: 6
 description: Cardholder billing Amount
+value: chbillingamount
 ---
 id: 7
 description: Transmission Date and Time
-value: 0907103000
+value: transmissiondatetime
 ---
 id: 9
 description: Settlement Conversion Rate
-value: 71212345
+value: settlementconversionrate
 ---
 id: 10
 description: Cardholder conversion rate
+value: cardholderconversionrate
 ---
 id: 11
 description: System Trace Audit Number
-value: 000003
+value: systraceauditnum
 ---
 id: 12
 description: Time, Local Transaction
-value: 102030
+value: timelocaltx
 ---
 id: 13
 description: Date, Local Transaction
-value: 1012
+value: datelocaltx
 ---
 id: 14
 description: Expiration Date
+value: expirationdate
 ---
 id: 15
 description: Date, Settlement
-value: 1012
+value: datesettlement
 ---
 id: 18
 description: Merchant Type
+value: merchanttype
 ---
 id: 19
 description: Acquiring Institution Country code
+value: acqinstcountrycode
 ---
 id: 22
 description: Point of Service Entry Mode Code
-value: 021
+value: ptofserviceentrymodecode
 ---
 id: 25
 description: Point of Service Condition Code
-value: 00
+value: ptofserviceconditioncode
 ---
 id: 32
 description: Acquiring Institution Identification Code
-value: 071111111
+value: acqinstidcode
 ---
 id: 37
 description: Retrieval Reference Number
-value: 790710000003
+value: retrievalrefnum
 ---
 id: 38
 description: Authorization Identification Response
+value: authidresp
 ---
 id: 39
 description: Response Code
+value: respcode
 ---
 id: 41
 description: Card Acceptor Terminal Identification
-value: 12344321
+value: cardaccpterminalid
 ---
 id: 42
 description: Card Acceptor Identification Code
+value: cardaccpidcode
 ---
 id: 43
 description: Card Acceptor Name and Location
-value: VIETBANK              12334567890123 704
+value: cardaccpnmloc
 ---
 id: 48
 description: Additional Data Private
-value: 018RATNA MATCHA|INDIA
+value: addtldataprivate
 ---
 id: 49
 description: Transaction Currency Code
-value: 704
+value: txcurcode
 ---
 id: 50
 description: Settlement Currency Code
-value: 704
+value: settelmentcurcode
 ---
 id: 51
 description: Currency code, cardholder billing
+value: curcodecardholderbilling
 ---
 id: 60
 description: User Defined Field
-value: 00201
+value: usrdefinedfld
 ---
 id: 62
 description: Service Code
-value: 06IF_DEP
+value: servccode
 ---
 id: 63
 description: Transaction reference number
-value: 00599345
+value: txrefnum
 ---
 id: 70
 description: Network Management Response Code
+value: networkmgtrespcode
 ---
 id: 100
 description: Receiving Institution Identification Code
-value: 0599999
+value: recvinstidcode
 ---
 id: 102
 description: From Account Identification
-value: 123932I0000171
+value: fromacctid
 ---
 id: 103
 description: To Account Identification
-value: 12100000000087
+value: toacctid
 ---
 id: 104
 description: Content transfers
-value: 019ContentTransferText
+value: contenttransfers
 ---
 id: 120
 description: Information cardholder or account holder beneficiary
+value: infochaccthbeneficiary
 ---
 id: 128
 description: Message Authentication Code
-value: sA05luUyHCXDtS4=
+value: msgauthcode

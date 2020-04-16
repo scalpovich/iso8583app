@@ -8,7 +8,9 @@ import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 @Component
 @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
@@ -18,17 +20,18 @@ public class Iso8583MessageBuilder {
     private int BITMAP_MAX_SIZE;
 
     private ISO8583MessageType iso8583MessageType;
-    private String[] fieldList;
+    private List<String> fields = new ArrayList<>(BITMAP_MAX_SIZE);
+    //private String[] fieldList;
 
     public Iso8583MessageBuilder(ISO8583MessageType iso8583MessageType) {
         this.iso8583MessageType = iso8583MessageType;
-        fieldList = new String[BITMAP_MAX_SIZE];
+        //fieldList = new String[BITMAP_MAX_SIZE];
     }
 
     public void putElement(int pos, String element) {
-        Validate.isTrue(pos>0 && pos<=BITMAP_MAX_SIZE, "invalid pos value " + pos + " for element '" + element + "'");
-        Validate.notEmpty(element, "element should not be empty");
-        fieldList[pos-1] = element;
+        //Validate.isTrue(pos>0 && pos<=BITMAP_MAX_SIZE, "invalid pos value " + pos + " for element '" + element + "'");
+        //Validate.notEmpty(element, "element should not be empty");
+        fields.add(element);
     }
 
     private char[] getNewBitMap(){
@@ -49,15 +52,18 @@ public class Iso8583MessageBuilder {
             bitmap[0] = '1';
         }
 
+
         for(int i=1; i<BITMAP_MAX_SIZE;i++) {
-            bitmap[i] = StringUtils.isEmpty(fieldList[i]) ? '0' : '1';
+            for(String field : fields) {
+                bitmap[i] = StringUtils.isEmpty(field) ? '0' : '1';
+            }
         }
         return new String(bitmap);
     }
 
     private String getDataElements() {
         StringBuilder sb = new StringBuilder();
-        Arrays.asList(fieldList).forEach(e-> {
+        fields.forEach(e-> {
             if (StringUtils.isNotEmpty(e)) {
                 sb.append(e);
             }
